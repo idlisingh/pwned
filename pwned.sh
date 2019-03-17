@@ -15,7 +15,7 @@ FOUND=`curl -s https://api.pwnedpasswords.com/range/$SHA1_PASSWORD_PRE | grep $S
 
 if [ "$FOUND" != "" ]; then
   TIMES=`echo $FOUND | sed 's/.*\://g' | sed 's/\n//g' | sed 's/\r//g'`
-  echo "Password $PASSWORD $TIMES times (hash: $SHA1_PASSWORD)"
+  echo "Password $PASSWORD found $TIMES times (hash: $SHA1_PASSWORD)"
 else
   echo "Password not found"
 fi
